@@ -1,4 +1,4 @@
-public class BinarySearchTreeNode
+class BinarySearchTreeNode
 {
     private String data;
     BinarySearchTreeNode left;
