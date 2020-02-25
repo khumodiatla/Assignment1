@@ -11,14 +11,14 @@ class LSArrayApp
         
         try
         {
-            File file = new File("C:\\Users\\Masego\\IdeaProjects\\prj1\\src\\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
+            File file = new File("/home/m/mtlkhu004/Documents/UCT/CSC2001F/Assignments/Assign 1/src/Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
             Scanner scannerReader = new Scanner(file);
 
 
 
             while(scannerReader.hasNextLine())
             {
-                for(int i=0; i<89;i++)
+                for(int i=0; i<2976;i++)
                 {
                     array[i] = scannerReader.nextLine();
                 }
@@ -31,11 +31,14 @@ class LSArrayApp
             System.out.println(e.getMessage());
         }
 
-        LSArrayApp p = new LSArrayApp();
-        //printAreas(args[0],args[1],args[2]);
-        p.printAreas(args[0],args[1],args[2]);
-        //p.printAllAreas();
-       //System.out.println( printAreas(args[0],args[1],args[2]));
+     	 LSArrayApp p = new LSArrayApp();
+       // p.printAreas(args[0],args[1],args[2]);
+        //p.printAreas(args[0],args[1],args[2]);
+        if(args.length ==0)
+	        p.printAllAreas();
+        if(args.length==3)
+        	p.printAreas(args[0],args[1],args[2]);
+        	
 
     }
 
