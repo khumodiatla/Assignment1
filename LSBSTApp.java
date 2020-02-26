@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 
-public class LSBSTApp
+class LSBSTApp
 {
     public static void main(String[] args)
     {

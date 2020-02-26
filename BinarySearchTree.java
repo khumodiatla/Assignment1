@@ -13,46 +13,38 @@ public class BinarySearchTree
                 root = new BinarySearchTreeNode(x, (BinarySearchTreeNode) null, (BinarySearchTreeNode) null);
             else
                 {
-                    System.out.println("khumodiatla");
                 insert(x, root);
-                System.out.println("khumo");
-
                 }
+                
         }
 
-        public  void insert(String x, BinarySearchTreeNode node1)
+        public  void insert(String x, BinarySearchTreeNode node)
         {
-            String queryKey, key;
-
-            if (x.charAt(6) == ' ' && node1.getData().charAt(6) == ' ')
-            {
-                queryKey = x.substring(0, 6);
-                key = node1.getData().substring(0, 6);
-            }
-            else
-                {
-                    queryKey = x.substring(0, 7);
-                    key = node1.getData().substring(0, 7);
-                }
+            int spaceIndexForQueryKey = x.indexOf(" ");
+            int spaceIndexForKey = node.getData().indexOf(" ");
+            
+            String queryKey = x.substring(0,spaceIndexForQueryKey);
+	    String key =node.getData().substring(0,spaceIndexForKey );
 
             if ((queryKey.compareTo(key) <= 0)) // if data less than or equal to node.data add it to left
             {
-                if (node1.left == null)
+                if (node.left == null)
                 {
 
-                    node1.left = new BinarySearchTreeNode(x, null, null);
+                    node.left = new BinarySearchTreeNode(x, null, null);
                 }
 
-                insert(x, node1.left);
+                insert(x, node.left);
             }
 
             else
+            {
+                if (node.right == null) 
                 {
-                if (node1.right == null) {
-                    node1.right = new BinarySearchTreeNode(x, null, null);
+                    node.right = new BinarySearchTreeNode(x, null, null);
                 }
 
-                insert(x, node1.right);
+                insert(x, node.right);
             }
         }
 
